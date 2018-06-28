@@ -40,7 +40,9 @@
    1. C/C++ | 常规 | 附加包含目录：E:\dev\boost_1_67_0;E:\dev\openssl-win32-1_0_2\include，设置为实际安装目录
    2. 连接器  | 常规 | 附加库目录： E:\dev\openssl-win32-1_0_2\lib\VC;E:\dev\boost_1_59_0\stage\lib32-msvc-10.0;
    3. 连接器  | 输入  |附加依赖项： libeay32MDd.lib;ssleay32MDd.lib;
-   
+
+6. 编译，运行连接到行情或交易网关的Ip，端口<br>
+
 ####  交易测试
 
 [TEmu测试方法.txt](./TEmu测试方法.txt)
