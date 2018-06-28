@@ -27,3 +27,14 @@
 
 3. 下载安装openssl库<br>
 在 http://slproweb.com/products/Win32OpenSSL.html 下载Win32 OpenSSL v1.0.2o。安装过程中选择将openssl dll复制到openssl bin目录下。
+
+4. 下载Temu代码
+
+5. 设置vc2017选项（debug版本）<br>
+   1. C/C++ | 常规 | 附加包含目录：E:\dev\boost_1_67_0;E:\dev\openssl-win32-1_0_2\include，设置为实际安装目录
+   2. 连接器  | 常规 | 附加库目录： E:\dev\openssl-win32-1_0_2\lib\VC;E:\dev\boost_1_59_0\stage\lib32-msvc-10.0;
+   3. 连接器  | 输入  |附加依赖项： libeay32MDd.lib;ssleay32MDd.lib;
+   
+####  交易测试
+
+####  消息格式文档
