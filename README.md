@@ -6,13 +6,13 @@
 　目前支持的数字资产交易所包括：bitfinex, kraken, bitstamp, bittrex, okex, huobi, binance, bitmex,zb, poloniex, bithumb. 提供详细的API访问接口文档，以及针对python, C++ 和java 的客户端访问源码。<br><br>
 　[官方网站](https://www.blueye.info)
 #### 使用对象
-　数字货币数据分析师
-　数字货币量化交易的个人或团队
-　对数字货币交易感兴趣的机构
-　分析行情数据的个人或团队
-　正在学习数字货币交易的人
+　数字货币数据分析师<br>
+　数字货币量化交易的个人或团队<br>
+　对数字货币交易感兴趣的机构<br>
+　分析行情数据的个人或团队<br>
+　正在学习数字货币交易的人<br>
 #### 使用前提
-　安装visual studio c++开发工具，建议安装vs2017，其他如2010及以上版本，则需要下载对应的boost、openssl库文件。
-　安装boost 1.67.0。
-　安装openssl 1.0.2。
+　安装visual studio c++开发工具，建议安装vs2017，其他如2010及以上版本，则需要下载对应的boost、openssl库文件。<br>
+　安装boost 1.67.0。<br>
+　安装openssl 1.0.2。<br>
 
