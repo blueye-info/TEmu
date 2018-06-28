@@ -19,10 +19,12 @@
 #### 下载安装
 1. 下载安装visual studio c++开发工具，以下以vs2017为例，其他版本注意使用boost和openssl的对应版本。<br>
 略过
+
 2. 下载安装boost库
 下载boost 1.67.0 版本，建议使用二进制版本，无需编译。 https://dl.bintray.com/boostorg/release/1.67.0/binaries/
 与vc2017匹配的32位版本是： boost_1_67_0-msvc-14.1-32.exe  
 选好安装目录，下一步直到结束。
 
 3. 下载安装openssl库
+
 在 http://slproweb.com/products/Win32OpenSSL.html下载Win32 OpenSSL v1.0.2o。安装过程中选择将openssl dll复制到openssl bin目录下。
