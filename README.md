@@ -20,6 +20,7 @@
 　安装visual studio c++开发工具，建议安装vs2017，其他如2010及以上版本，则需要下载对应的boost、openssl库文件。<br>
 　安装boost 1.67.0。<br>
 　安装openssl 1.0.2。<br>
+　安装行情或交易网关。<br>
 
 #### 下载安装
 1. 下载安装visual studio c++开发工具，以下以vs2017为例，其他版本注意使用boost和openssl的对应版本。<br>
