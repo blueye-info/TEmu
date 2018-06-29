@@ -18,17 +18,31 @@ class chat_client
 public:
 	chat_client(boost::asio::io_service& io_service,
 		boost::asio::ssl::context& context,
-		tcp::resolver::iterator endpoint_iterator)
+		tcp::resolver::iterator& endpoint_iterator)
 		: io_service_(io_service),
-		socket_(io_service, context)
+		socket_(io_service, context),
+		context_(context),
+		endpoint_iterator_(endpoint_iterator)
+	{
+		//socket_.set_verify_mode(boost::asio::ssl::verify_peer);
+		//socket_.set_verify_callback(
+		//	boost::bind(&chat_client::verify_certificate, this, _1, _2));
+
+		//boost::asio::async_connect(socket_.lowest_layer(), endpoint_iterator,
+		//	boost::bind(&chat_client::handle_connect, this,
+		//	boost::asio::placeholders::error));
+		connect();
+	}
+
+	void connect()
 	{
 		socket_.set_verify_mode(boost::asio::ssl::verify_peer);
 		socket_.set_verify_callback(
 			boost::bind(&chat_client::verify_certificate, this, _1, _2));
 
-		boost::asio::async_connect(socket_.lowest_layer(), endpoint_iterator,
+		boost::asio::async_connect(socket_.lowest_layer(), endpoint_iterator_,
 			boost::bind(&chat_client::handle_connect, this,
-			boost::asio::placeholders::error));
+				boost::asio::placeholders::error));
 	}
 
 	bool verify_certificate(bool preverified,
@@ -78,7 +92,9 @@ private:
 		}
 		else
 		{
-			std::cout << "Connect failed: " << error.message() << "\n";
+			std::cout << "Connect failed: " << error.message() << std::endl;
+			boost::thread::sleep(boost::get_system_time() + boost::posix_time::seconds(5));
+			connect();
 		}
 
 
@@ -99,6 +115,8 @@ private:
 		else
 		{
 			std::cout << "Handshake failed: " << error.message() << "\n";
+			boost::thread::sleep(boost::get_system_time() + boost::posix_time::seconds(5));
+			connect();
 		}
 	}
 
@@ -114,8 +132,22 @@ private:
 		}
 		else
 		{
-			std::cout << " chat client::handle_read_header error" << std::endl;
+			//std::cout << " chat client::handle_read_header error" << std::endl;
 			do_close();
+
+			//connected_ = false;
+			std::cout << "handle_read_header() reconnected!" << std::endl;
+			int i = 0;
+			//while (!connected_)
+			{
+				connect();
+				//++i;
+				//std::cout << "handle_read_header() Disconnected! Reconnect " << i << std::endl;
+				//if (!connected_)
+				//{
+				//	Sleep(1000);
+				//}
+			}
 		}
 	}
 
@@ -126,7 +158,7 @@ private:
 			//DEBUG
 //			std::cout << "char_client::handle_read_body() ok -- " << read_msg_.to_string() << std::endl;
 			std::cout.write(read_msg_.body(), read_msg_.body_length());
-//			std::cout << "\n\n"<<std::endl;
+			std::cout << "\n"<<std::endl;
 //			std::cout << "pause!!!" << std::endl;
 		
 			read_msg_.from_string("");
@@ -140,6 +172,8 @@ private:
 		{
 			std::cout << "char_client::handle_read_body() error -- " << std::endl;
 			do_close();
+
+			connect();
 		}
 	}
 
@@ -175,6 +209,10 @@ private:
 		else
 		{
 			do_close();
+
+			std::cout << "handle_write() reconnect" << std::endl;
+
+			connect();
 		}
 	}
 
@@ -186,6 +224,8 @@ private:
 
 private:
 	boost::asio::io_service& io_service_;
+	boost::asio::ssl::context& context_;
+	tcp::resolver::iterator& endpoint_iterator_;
 	//tcp::socket socket_;
 	boost::asio::ssl::stream<boost::asio::ip::tcp::socket> socket_;
 	string_message read_msg_;
