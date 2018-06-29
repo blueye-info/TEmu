@@ -45,7 +45,7 @@
 
 ####  交易测试
 
-[TEmu测试方法.txt](/BTGW_demo/TEmu测试方法.txt)
+[TEmu测试方法.txt](https://github.com/blueye-info/BTGW_demo/blob/master/TEmu%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95.txt)
 
 
 ####  消息格式文档
