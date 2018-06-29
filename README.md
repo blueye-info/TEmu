@@ -20,28 +20,30 @@
 　安装visual studio c++开发工具，建议安装vs2017，其他如2010及以上版本，则需要下载对应的boost、openssl库文件。<br>
 　安装boost 1.67.0。<br>
 　安装openssl 1.0.2。<br>
-　安装行情或交易网关。<br>
+　安装交易网关BTGW_demo。<br>
 
 #### 下载安装
-1. 下载安装visual studio c++开发工具，以下以vs2017为例，其他版本注意使用boost和openssl的对应版本。<br>
+1. 下载，部署，配置好BTGW_demo交易网关 [链接](https://github.com/blueye-info/BTGW_demo)
+
+2. 下载安装visual studio c++开发工具，以下以vs2017为例，其他版本注意使用boost和openssl的对应版本。<br>
 略过
 
-2. 下载安装boost库<br>
+3. 下载安装boost库<br>
 下载boost 1.67.0 版本，建议使用二进制版本，无需编译。 https://dl.bintray.com/boostorg/release/1.67.0/binaries/
 与vc2017匹配的32位版本是： boost_1_67_0-msvc-14.1-32.exe  
 选好安装目录，下一步直到结束。
 
-3. 下载安装openssl库<br>
+4. 下载安装openssl库<br>
 在 http://slproweb.com/products/Win32OpenSSL.html 下载Win32 OpenSSL v1.0.2o。安装过程中选择将openssl dll复制到openssl bin目录下。
 
-4. 下载Temu代码
+5. 下载Temu代码
 
-5. 设置vc2017选项（debug版本）<br>
+6. 设置vc2017选项（debug版本）<br>
    1. C/C++ | 常规 | 附加包含目录：E:\dev\boost_1_67_0;E:\dev\openssl-win32-1_0_2\include，设置为实际安装目录
    2. 连接器  | 常规 | 附加库目录： E:\dev\openssl-win32-1_0_2\lib\VC;E:\dev\boost_1_59_0\stage\lib32-msvc-10.0;
    3. 连接器  | 输入  |附加依赖项： libeay32MDd.lib;ssleay32MDd.lib;
 
-6. 编译，运行连接到行情或交易网关的Ip，端口<br>
+7. 编译，运行连接到交易网关: >Temu.exe Ip 端口<br>
 
 ####  交易测试
 
