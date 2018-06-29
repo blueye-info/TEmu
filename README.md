@@ -20,7 +20,7 @@
 　安装visual studio c++开发工具，建议安装vs2017，其他如2010及以上版本，则需要下载对应的boost、openssl库文件。<br>
 　安装boost 1.67.0。<br>
 　安装openssl 1.0.2。<br>
-　安装交易网关BTGW_demo。<br>
+　安装配置交易网关BTGW_demo。<br>
 
 #### 下载安装
 1. 下载，部署，配置好BTGW_demo交易网关 [链接](https://github.com/blueye-info/BTGW_demo)
