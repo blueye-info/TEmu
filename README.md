@@ -52,4 +52,4 @@
 
 ####  消息格式文档 
 
-[数字货币网关消息定义](https://github.com/blueye-info/BTGW_demo/blob/master/%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81%E7%BD%91%E5%85%B3%E6%B6%88%E6%81%AF%E5%AE%9A%E4%B9%89-20180622.docx)
+[数字货币网关消息定义](https://github.com/blueye-info/BTGW_demo/blob/master/%E8%93%9D%E7%9B%AE%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE%E7%BD%91%E7%AB%99API%E8%A7%84%E8%8C%83-2018.06.21.pdf)
